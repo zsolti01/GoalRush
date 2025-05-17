@@ -55,9 +55,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Egyebek.xaml.cs">
+      <DependentUpon>Egyebek.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Focicipok.xaml.cs">
+      <DependentUpon>Focicipok.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Focilabdak.xaml.cs">
+      <DependentUpon>Focilabdak.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RegWindow.xaml.cs">
       <DependentUpon>RegWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="Egyebek.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Focicipok.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Focilabdak.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogInWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
