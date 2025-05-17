@@ -36,5 +36,26 @@ namespace GoalRush
             logInWindow.Show();
             this.Close();
         }
+
+        private void Cipok_Click(object sender, RoutedEventArgs e)
+        {
+            Focicipok focicipok = new Focicipok();
+            focicipok.Show();
+            this.Close();
+        }
+
+        private void Labdak_Click(object sender, RoutedEventArgs e)
+        {
+            Focilabdak focilabdak = new Focilabdak();
+            focilabdak.Show();
+            this.Close();
+        }
+
+        private void egyebek_Click(object sender, RoutedEventArgs e)
+        {
+            Egyebek egyebek = new Egyebek();
+            egyebek.Show();
+            this.Close();
+        }
     }
 }

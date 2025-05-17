@@ -31,6 +31,9 @@
             FontWeight="Bold" 
             Grid.Row="1"/>
         <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="451,110,158,21" Background="Red" BorderBrush="Black" Grid.Column="1" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Button x:Name="Cipok" Grid.Column="1" Content="Focicipők" HorizontalAlignment="Left" Margin="145,186,0,0" VerticalAlignment="Top" Height="53" Width="112" BorderBrush="Black" FontSize="18" FontWeight="Bold" FontFamily="Tahoma" Background="#FF05AEFF" Foreground="White" Click="Cipok_Click"/>
+        <Button x:Name="Labdak" Grid.Column="1" Content="Focilabdák" HorizontalAlignment="Left" Margin="294,186,0,0" VerticalAlignment="Top" Height="53" Width="112" BorderBrush="Black" FontSize="18" FontWeight="Bold" FontFamily="Tahoma" Background="#FF05AEFF" Foreground="White" Click="Labdak_Click"/>
+        <Button x:Name="egyebek" Grid.Column="1" Content="Egyebek" HorizontalAlignment="Left" Margin="443,186,0,0" VerticalAlignment="Top" Height="53" Width="112" BorderBrush="Black" FontSize="18" FontWeight="Bold" FontFamily="Tahoma" Background="#FF05AEFF" Foreground="White" Click="egyebek_Click"/>
 
     </Grid>
 </Window>
