@@ -23,5 +23,24 @@ namespace GoalRush
         {
             InitializeComponent();
         }
+
+        private void New_Pf_Click(object sender, RoutedEventArgs e)
+        {
+            RegWindow regWindow = new RegWindow();
+            regWindow.Show();
+            this.Close();
+        }
+
+        private void Kilepes_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Bejelentkezes_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
     }
 }

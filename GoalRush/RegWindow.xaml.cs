@@ -23,5 +23,24 @@ namespace GoalRush
         {
             InitializeComponent();
         }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void Marvanprofil_Click(object sender, RoutedEventArgs e)
+        {
+            LogInWindow logInWindow = new LogInWindow();
+            logInWindow.Show();
+            this.Close();
+        }
+
+        private void Kilepes_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

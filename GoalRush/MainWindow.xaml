@@ -7,9 +7,19 @@
         mc:Ignorable="d"
         Title="GoalRush" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="255*"/>
+            <RowDefinition Height="179*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="47*"/>
+        </Grid.ColumnDefinitions>
         <Grid.Background>
             <ImageBrush ImageSource="/bg.png"/>
         </Grid.Background>
+        <Button x:Name="Kilepes" Content="Kilépés" Margin="599,110,10,21" Background="Red" BorderBrush="Black" Grid.Column="1" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
+        <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="451,110,158,21" Background="Red" BorderBrush="Black" Grid.Column="1" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
 
     </Grid>
 </Window>

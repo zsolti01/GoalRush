@@ -24,5 +24,17 @@ namespace GoalRush
         {
             InitializeComponent();
         }
+
+        private void Kilepes_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Kijelentkezes_Click(object sender, RoutedEventArgs e)
+        {
+            LogInWindow logInWindow = new LogInWindow();
+            logInWindow.Show();
+            this.Close();
+        }
     }
 }

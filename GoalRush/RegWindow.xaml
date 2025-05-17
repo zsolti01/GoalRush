@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GoalRush"
         mc:Ignorable="d"
-        Title="RegWindow" Height="450" Width="800">
+        Title="Regisztráció" Height="450" Width="800">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/bg.png"/>
         </Grid.Background>
+        <Button x:Name="Regisztracio" Content="Regisztráció" Margin="328,306,328,66" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="LogIn_Click"/>
+        <Button x:Name="Bejelentkezek" Content="Bejelentkezek" Margin="328,244,328,144" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="Marvanprofil_Click"/>
+        <Button x:Name="Kilepes" Content="Kilépés" Margin="647,363,10,23" Background="Red" BorderBrush="Black" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold"/>
 
     </Grid>
 </Window>
