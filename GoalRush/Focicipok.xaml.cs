@@ -36,10 +36,17 @@ namespace GoalRush
             this.Close();
         }
 
-        private void Vissza_Click(object sender, RoutedEventArgs e)
+        private void logo_Click(object sender, MouseButtonEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            this.Close();
+        }
+
+        private void vissza_Click(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
             this.Close();
         }
     }

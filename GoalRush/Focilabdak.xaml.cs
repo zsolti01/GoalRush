@@ -42,5 +42,19 @@ namespace GoalRush
             mainWindow.Show();
             this.Close();
         }
+
+        private void logo_Click(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+        }
+
+        private void vissza_Click(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow mainwindow = new MainWindow();
+            mainwindow.Show();
+            this.Close();
+        }
     }
 }

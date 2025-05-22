@@ -10,29 +10,12 @@
         <Grid.Background>
             <ImageBrush ImageSource="/bg.png"/>
         </Grid.Background>
-        <Button 
-            x:Name="Kilepes" 
-            Content="Kilépés" 
-            Margin="647,365,10,21" 
-            Background="Red" 
-            BorderBrush="Black" 
-            Click="Kilepes_Click" 
-            FontFamily="Tahoma" 
-            FontSize="20" 
-            FontWeight="Bold" 
-        />
-        <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="499,365,158,21" Background="Red" BorderBrush="Black" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold"/>
-        <Button 
-            x:Name="Vissza" 
-            Content="&lt;- Vissza" 
-            Margin="10,365,647,21" 
-            Background="#FF1588FF" 
-            BorderBrush="Black" 
-            Click="Vissza_Click" 
-            FontFamily="Tahoma" 
-            FontSize="20" 
-            FontWeight="Bold" Foreground="White" 
-        />
+        <Image Margin="0,0,0,363" Source="/Img/black.png" Stretch="Fill"/>
+        <Button x:Name="Kilepes" Content="Kilépés" Margin="643,10,10,375" Background="Red" BorderBrush="Black" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="503,10,154,375" Background="Red" BorderBrush="Black" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="16" FontWeight="Bold"/>
+        <Image x:Name="logo" Margin="-41,6,622,371" Source="/Img/logo.png" Stretch="Uniform" MouseLeftButtonDown="logo_Click"/>
+        <Label Content="Egyebek" HorizontalAlignment="Left" Margin="120,6,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="22" Cursor="" Foreground="#FF5CB4FF"/>
+        <Image x:Name="Vissza" Margin="22,352,714,17" Source="/Img/visszanyil.png" Stretch="Fill" MouseLeftButtonDown="vissza_Click"/>
 
     </Grid>
 </Window>
