@@ -18,22 +18,13 @@
         <Grid.Background>
             <ImageBrush ImageSource="/bg.png"/>
         </Grid.Background>
-        <Button 
-            x:Name="Kilepes" 
-            Content="Kilépés" 
-            Margin="599,110,10,21" 
-            Background="Red" 
-            BorderBrush="Black" 
-            Grid.Column="1" 
-            Click="Kilepes_Click" 
-            FontFamily="Tahoma" 
-            FontSize="20" 
-            FontWeight="Bold" 
-            Grid.Row="1"/>
-        <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="451,110,158,21" Background="Red" BorderBrush="Black" Grid.Column="1" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold" Grid.Row="1"/>
         <Button x:Name="Cipok" Grid.Column="1" Content="Focicipők" HorizontalAlignment="Left" Margin="145,186,0,0" VerticalAlignment="Top" Height="53" Width="112" BorderBrush="Black" FontSize="18" FontWeight="Bold" FontFamily="Tahoma" Background="#FF05AEFF" Foreground="White" Click="Cipok_Click"/>
         <Button x:Name="Labdak" Grid.Column="1" Content="Focilabdák" HorizontalAlignment="Left" Margin="294,186,0,0" VerticalAlignment="Top" Height="53" Width="112" BorderBrush="Black" FontSize="18" FontWeight="Bold" FontFamily="Tahoma" Background="#FF05AEFF" Foreground="White" Click="Labdak_Click"/>
         <Button x:Name="egyebek" Grid.Column="1" Content="Egyebek" HorizontalAlignment="Left" Margin="443,186,0,0" VerticalAlignment="Top" Height="53" Width="112" BorderBrush="Black" FontSize="18" FontWeight="Bold" FontFamily="Tahoma" Background="#FF05AEFF" Foreground="White" Click="egyebek_Click"/>
+        <Image Margin="0,0,0,184" Source="/Img/black.png" Stretch="Fill" Grid.ColumnSpan="2"/>
+        <Button x:Name="Kilepes" Content="Kilépés" Margin="595,10,10,196" Background="Red" BorderBrush="Black" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="16" FontWeight="Bold" Grid.Column="1"/>
+        <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="455,11,154,196" Background="Red" BorderBrush="Black" Grid.Column="1" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="16" FontWeight="Bold"/>
+        <Image Margin="238,63,286,86" Source="/Img/logo.png" Stretch="Uniform" Grid.Column="1"/>
 
     </Grid>
 </Window>

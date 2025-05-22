@@ -8,11 +8,13 @@
         Title="Regisztráció" Height="450" Width="800">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/bg.png"/>
+            <ImageBrush ImageSource="/Img/bg.png"/>
         </Grid.Background>
         <Button x:Name="Regisztracio" Content="Regisztráció" Margin="328,306,328,66" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="LogIn_Click"/>
         <Button x:Name="Bejelentkezek" Content="Bejelentkezek" Margin="328,244,328,144" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="Marvanprofil_Click"/>
-        <Button x:Name="Kilepes" Content="Kilépés" Margin="647,363,10,23" Background="Red" BorderBrush="Black" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold"/>
+        <Image Margin="0,0,0,363" Source="/Img/black.png" Stretch="Fill"/>
+        <Button x:Name="Kilepes" Content="Kilépés" Margin="643,10,10,375" Background="Red" BorderBrush="Black" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold"/>
+        <Image Margin="286,63,286,265" Source="/Img/logo.png" Stretch="Uniform"/>
 
     </Grid>
 </Window>
