@@ -145,6 +145,9 @@
     <Resource Include="Img\visszanyil.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Img\ball.jpg" />
+    <Resource Include="Img\cipo.jpg" />
+    <Resource Include="Img\glove.jpg" />
     <Content Include="sportkellekek.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -57,5 +57,23 @@ namespace GoalRush
             egyebek.Show();
             this.Close();
         }
+
+        private void cipo_kep_Onclick(object sender, MouseButtonEventArgs e) {
+            Focicipok focicipok = new Focicipok();
+            focicipok.Show();
+            this.Close();
+        }
+
+        private void labda_kep_Click(object sender, MouseButtonEventArgs e) {
+            Focilabdak focilabdak = new Focilabdak();
+            focilabdak.Show();
+            this.Close();
+        }
+
+        private void egyeb_kep_Onclick(object sender, MouseButtonEventArgs e) {
+            Egyebek egyebek = new Egyebek();
+            egyebek.Show();
+            this.Close();
+        }
     }
 }
