@@ -16,7 +16,7 @@
         <Image x:Name="logo" Margin="-37,6,618,371" Source="/Img/logo.png" Stretch="Uniform" MouseLeftButtonDown="logo_Click"/>
         <Label Content="Focilabdák" HorizontalAlignment="Left" Margin="130,8,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="22" Cursor="" Foreground="#FF5CB4FF"/>
         <Image x:Name="Vissza" Margin="22,352,714,17" Source="/Img/visszanyil.png" Stretch="Fill" MouseLeftButtonDown="vissza_Click"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="91,78,10,10"/>
+        <DataGrid x:Name="DataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="91,64,10,10" AutoGenerateColumns="True"/>
 
     </Grid>
 </Window>

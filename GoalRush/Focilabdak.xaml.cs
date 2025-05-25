@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,30 @@ namespace GoalRush
         public Focilabdak()
         {
             InitializeComponent();
+            LabdaBetoltes();
+        }
+
+        private void LabdaBetoltes()
+        {
+            string ConnectionString = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None";
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    string sql = "SELECT * FROM focilabdak";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    DataGrid.ItemsSource = dt.DefaultView;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba" + ex.Message);
+            }
         }
 
         private void Kilepes_Click(object sender, RoutedEventArgs e)
