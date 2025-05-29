@@ -36,7 +36,7 @@ namespace GoalRush
                 using (MySqlConnection conn = new MySqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    string sql = "SELECT * FROM egyebek";
+                    string sql = "SELECT `marka`, `nev`, `ar` FROM `egyebek` WHERE 1";
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
