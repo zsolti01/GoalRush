@@ -26,10 +26,10 @@
         <Button x:Name="Kijelentkezes" Content="Kijelentkezés" Margin="455,10,154,196" Background="Red" BorderBrush="Black" Grid.Column="1" Click="Kijelentkezes_Click" FontFamily="Tahoma" FontSize="16" FontWeight="Bold"/>
         <Image Margin="238,77,286,72" Source="/Img/logo.png" Stretch="Uniform" Grid.Column="1"/>
         <Label Grid.Column="1" Content="&quot;A legjobb focis termékek egy helyen&quot;" HorizontalAlignment="Left" Margin="174,175,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontStyle="Italic" FontWeight="Bold" FontSize="18"/>
-        <Image x:Name="cipo_kep" Grid.Column="1" Margin="145,234,482,90" Source="/Img/cipo.jpg" Stretch="Fill" Grid.RowSpan="2" MouseLeftButtonDown="cipo_kep_Onclick"/>
+        <Image x:Name="cipo_kep" Grid.Column="1" Margin="145,234,481.5,90" Source="/Img/cipo.jpg" Stretch="Fill" Grid.RowSpan="2" MouseLeftButtonDown="cipo_kep_Onclick"/>
         <Image x:Name="labda_kep" Grid.Column="1" Margin="294,234,333,90" Source="/Img/ball.jpg" Stretch="Fill" Grid.RowSpan="2" MouseLeftButtonDown="labda_kep_Click"/>
         <Image x:Name="egyeb_kep" Grid.Column="1" Margin="443,234,183,90" Source="/Img/glove.jpg" Stretch="Fill" Grid.RowSpan="2" MouseLeftButtonDown="egyeb_kep_Onclick"/>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="145,234,482,90" Grid.RowSpan="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="145,234,481.5,90" Grid.RowSpan="2"/>
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="294,234,332,90" Grid.RowSpan="2"/>
         <Border BorderBrush="Black" BorderThickness="1" Grid.Column="1" Margin="443,234,182,90" Grid.RowSpan="2"/>
 

@@ -50,6 +50,28 @@ namespace GoalRush
             }
         }
 
+        private void MarkaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (MarkaBox.SelectedItem != null)
+            {
+                string marka = MarkaBox.SelectedItem.ToString();
+
+                string connStr = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None;";
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+                    string sql = "SELECT `id`, `marka`, `nev`, `ar`, `meret`, `leiras`, `raktaron` FROM `focicipok` WHERE `marka` = @marka";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@marka", marka);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    DataGrid.ItemsSource = dt.DefaultView;
+                    DataGrid.Items.Refresh();
+                }
+            }
+        }
+
         private void Kilepes_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
