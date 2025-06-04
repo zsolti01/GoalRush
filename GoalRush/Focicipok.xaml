@@ -27,6 +27,7 @@
         <Image Margin="20,66,596,97" Source="/Img/white.png" Stretch="Fill"/>
         <Label Content="Szűrők:" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" Height="37" Width="74" FontWeight="Bold" FontSize="18"/>
         <ComboBox x:Name="MarkaBox" HorizontalAlignment="Left" Margin="31,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="MarkaBox_SelectionChanged">
+            <ComboBoxItem>Mindegy</ComboBoxItem>
             <ComboBoxItem>Adidas</ComboBoxItem>
             <ComboBoxItem>Nike</ComboBoxItem>
         </ComboBox>

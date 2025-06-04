@@ -207,8 +207,8 @@
     <Resource Include="Img\visszanyil.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Img\white.png" />
     <Content Include="termekek.sql" />
+    <Resource Include="Img\white.png" />
     <Resource Include="Img\logo2.png" />
     <Resource Include="Img\ball.jpg" />
     <Resource Include="Img\cipo.jpg" />

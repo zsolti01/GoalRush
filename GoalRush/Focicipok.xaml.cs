@@ -25,6 +25,7 @@ namespace GoalRush
         {
             InitializeComponent();
             CipoBetoltes();
+            MarkaBox.SelectedIndex = 0;
         }
 
         private void CipoBetoltes()
@@ -52,22 +53,33 @@ namespace GoalRush
 
         private void MarkaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (MarkaBox.SelectedItem != null)
+            var selectedItem = MarkaBox.SelectedItem as ComboBoxItem;
+            if (selectedItem != null)
             {
-                string marka = MarkaBox.SelectedItem.ToString();
-
+                string marka = selectedItem.Content.ToString();
                 string connStr = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None;";
+
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    string sql = "SELECT `id`, `marka`, `nev`, `ar`, `meret`, `leiras`, `raktaron` FROM `focicipok` WHERE `marka` = @marka";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@marka", marka);
+
+                    string sql = "SELECT `marka`, `nev`, `ar`, `meret` FROM `focicipok`";
+                    MySqlCommand cmd = new MySqlCommand();
+
+                    if (marka != "Mindegy")
+                    {
+                        sql += " WHERE `marka` = @marka";
+                        cmd.Parameters.AddWithValue("@marka", marka);
+                    }
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql;
+
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
+
                     DataGrid.ItemsSource = dt.DefaultView;
-                    DataGrid.Items.Refresh();
                 }
             }
         }

@@ -16,13 +16,21 @@
         <Image x:Name="logo" Margin="-41,6,622,371" Source="/Img/logo.png" Stretch="Uniform" MouseLeftButtonDown="logo_Click"/>
         <Label Content="Egyebek" HorizontalAlignment="Left" Margin="120,6,0,0" VerticalAlignment="Top" FontFamily="Arial" FontWeight="Bold" FontSize="22" Cursor="" Foreground="#FF5CB4FF"/>
         <Image x:Name="Vissza" Margin="22,352,714,17" Source="/Img/visszanyil.png" Stretch="Fill" MouseLeftButtonDown="vissza_Click"/>
-        <DataGrid x:Name="DataGrid" ItemsSource="{Binding Focicipok}" AutoGenerateColumns="False" Margin="120,76,10,10">
+        <DataGrid x:Name="DataGrid" ItemsSource="{Binding Egyebek}" AutoGenerateColumns="False" Margin="199,66,10,10">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Márka:" Binding="{Binding marka}" />
                 <DataGridTextColumn Header="Név:" Binding="{Binding nev}" />
                 <DataGridTextColumn Header="Ár (Ft):" Binding="{Binding ar}" />
             </DataGrid.Columns>
         </DataGrid>
+        <Image Margin="20,66,596,97" Source="/Img/white.png" Stretch="Fill"/>
+        <Label Content="Szűrők:" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" Height="37" Width="74" FontWeight="Bold" FontSize="18"/>
+        <ComboBox x:Name="MarkaBox" HorizontalAlignment="Left" Margin="31,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="MarkaBox_SelectionChanged">
+            <ComboBoxItem Content="Mindegy"/>
+            <ComboBoxItem Content="Adidas"/>
+            <ComboBoxItem Content="Nike"/>
+        </ComboBox>
+        <Label Content="Márka:" HorizontalAlignment="Left" Margin="28,102,0,0" VerticalAlignment="Top" FontSize="16" Cursor=""/>
 
     </Grid>
 </Window>

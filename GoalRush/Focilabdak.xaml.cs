@@ -25,6 +25,7 @@ namespace GoalRush
         {
             InitializeComponent();
             LabdaBetoltes();
+            MarkaBox.SelectedIndex = 0;
         }
 
         private void LabdaBetoltes()
@@ -47,6 +48,39 @@ namespace GoalRush
             catch (Exception ex)
             {
                 MessageBox.Show("Hiba" + ex.Message);
+            }
+        }
+
+        private void MarkaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = MarkaBox.SelectedItem as ComboBoxItem;
+            if (selectedItem != null)
+            {
+                string marka = selectedItem.Content.ToString();
+                string connStr = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None;";
+
+                using (MySqlConnection conn = new MySqlConnection(connStr))
+                {
+                    conn.Open();
+
+                    string sql = "SELECT `marka`, `nev`, `ar`, `meret` FROM `focilabdak`";
+                    MySqlCommand cmd = new MySqlCommand();
+
+                    if (marka != "Mindegy")
+                    {
+                        sql += " WHERE `marka` = @marka";
+                        cmd.Parameters.AddWithValue("@marka", marka);
+                    }
+
+                    cmd.Connection = conn;
+                    cmd.CommandText = sql;
+
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+
+                    DataGrid.ItemsSource = dt.DefaultView;
+                }
             }
         }
 
