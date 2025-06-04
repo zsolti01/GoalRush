@@ -24,7 +24,7 @@
                 <DataGridTextColumn Header="Méret:" Binding="{Binding meret}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Image Margin="20,66,596,97" Source="/Img/white.png" Stretch="Fill"/>
+        <Image Margin="20,63,596,100" Source="/Img/white.png" Stretch="Fill"/>
         <Label Content="Szűrők:" HorizontalAlignment="Left" Margin="24,65,0,0" VerticalAlignment="Top" Height="37" Width="74" FontWeight="Bold" FontSize="18"/>
         <ComboBox x:Name="MarkaBox" HorizontalAlignment="Left" Margin="31,132,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="MarkaBox_SelectionChanged">
             <ComboBoxItem>Mindegy</ComboBoxItem>
@@ -32,6 +32,17 @@
             <ComboBoxItem>Nike</ComboBoxItem>
         </ComboBox>
         <Label Content="Márka:" HorizontalAlignment="Left" Margin="28,102,0,0" VerticalAlignment="Top" FontSize="16" Cursor=""/>
+        <Label Content="Méret:" HorizontalAlignment="Left" Margin="28,162,0,0" VerticalAlignment="Top" FontSize="16" Cursor=""/>
+        <ComboBox x:Name="MeretBox" HorizontalAlignment="Left" Margin="31,192,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="MeretBox_SelectionChanged">
+            <ComboBoxItem>Mindegy</ComboBoxItem>
+            <ComboBoxItem>38</ComboBoxItem>
+            <ComboBoxItem>39</ComboBoxItem>
+            <ComboBoxItem>40</ComboBoxItem>
+            <ComboBoxItem>41</ComboBoxItem>
+            <ComboBoxItem>42</ComboBoxItem>
+            <ComboBoxItem>43</ComboBoxItem>
+            <ComboBoxItem>44</ComboBoxItem>
+        </ComboBox>
 
     </Grid>
 </Window>

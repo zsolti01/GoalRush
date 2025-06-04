@@ -26,6 +26,7 @@ namespace GoalRush
             InitializeComponent();
             CipoBetoltes();
             MarkaBox.SelectedIndex = 0;
+            MeretBox.SelectedIndex = 0;
         }
 
         private void CipoBetoltes()
@@ -51,37 +52,54 @@ namespace GoalRush
             }
         }
 
-        private void MarkaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void FrissitesSzures()
         {
-            var selectedItem = MarkaBox.SelectedItem as ComboBoxItem;
-            if (selectedItem != null)
-            {
-                string marka = selectedItem.Content.ToString();
-                string connStr = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None;";
+            string connStr = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None;";
+            string markaSzuro = (MarkaBox.SelectedItem as ComboBoxItem)?.Content.ToString() ?? "Minden";
+            string meretSzuro = (MeretBox.SelectedItem as ComboBoxItem)?.Content.ToString() ?? "Minden";
 
+            try
+            {
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
 
-                    string sql = "SELECT `marka`, `nev`, `ar`, `meret` FROM `focicipok`";
-                    MySqlCommand cmd = new MySqlCommand();
+                    string sql = "SELECT `marka`, `nev`, `ar`, `meret` FROM `focicipok` WHERE 1=1";
 
-                    if (marka != "Mindegy")
-                    {
-                        sql += " WHERE `marka` = @marka";
-                        cmd.Parameters.AddWithValue("@marka", marka);
-                    }
+                    if (markaSzuro != "Minden")
+                        sql += " AND marka = @marka";
 
-                    cmd.Connection = conn;
-                    cmd.CommandText = sql;
+                    if (meretSzuro != "Minden")
+                        sql += " AND meret = @meret";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                    if (markaSzuro != "Minden")
+                        cmd.Parameters.AddWithValue("@marka", markaSzuro);
+
+                    if (meretSzuro != "Minden")
+                        cmd.Parameters.AddWithValue("@meret", meretSzuro);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapter.Fill(dt);
-
                     DataGrid.ItemsSource = dt.DefaultView;
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba: " + ex.Message);
+            }
+        }
+
+        private void MarkaBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FrissitesSzures();
+        }
+
+        private void MeretBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FrissitesSzures();
         }
 
         private void Kilepes_Click(object sender, RoutedEventArgs e)
