@@ -10,13 +10,17 @@
         <Grid.Background>
             <ImageBrush ImageSource="/bg.png"/>
         </Grid.Background>
-        <Button x:Name="Bejelentkezes" Content="Bejelentkezés" Margin="328,306,328,66" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="Bejelentkezes_Click"/>
-        <Button x:Name="Regisztralok" Content="Regisztrálok" Margin="328,244,328,144" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="New_Pf_Click"/>
+        <Button x:Name="Bejelentkezes" Content="Bejelentkezés" Margin="323,353,333,19" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="Bejelentkezes_Click"/>
+        <Button x:Name="Regisztralok" Content="Regisztrálok" Margin="643,361,13,27" FontFamily="Tahoma" FontSize="18" FontWeight="Bold" BorderBrush="Black" Background="#FF3566FF" Foreground="#FFFAFAFA" Click="New_Pf_Click"/>
         <Image Margin="0,0,0,363" Source="/Img/black.png" Stretch="Fill"/>
         <Image Margin="286,72,286,256" Source="/Img/logo.png" Stretch="Uniform"/>
         <Button x:Name="Kilepes" Content="Kilépés" Margin="643,10,10,375" Background="Red" BorderBrush="Black" Click="Kilepes_Click" FontFamily="Tahoma" FontSize="20" FontWeight="Bold"/>
         <Label Content="&quot;A legjobb focis termékek egy helyen&quot;" HorizontalAlignment="Center" Margin="0,167,0,0" VerticalAlignment="Top" FontFamily="Tahoma" FontStyle="Italic" FontWeight="Bold" FontSize="18"/>
-        <Image Margin="600,353,-1848,-1967" Source="/Img/visszanyil.png" Stretch="Fill"/>
+        <Image Margin="598,407,-1846,-2021" Source="/Img/visszanyil.png" Stretch="Fill"/>
+        <TextBox x:Name="Log_Felh" HorizontalAlignment="Left" Margin="315,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" Height="32"/>
+        <PasswordBox x:Name="Log_Jelsz" HorizontalAlignment="Left" Margin="315,293,0,0" VerticalAlignment="Top" Width="160" Height="29"/>
+        <Label Content="Felhasználónév" HorizontalAlignment="Left" Margin="315,0,0,0" VerticalAlignment="Center" Width="104"/>
+        <Label HorizontalAlignment="Left" Margin="315,267,0,0" VerticalAlignment="Top" Width="96" Content="Jelszó"/>
 
     </Grid>
 </Window>

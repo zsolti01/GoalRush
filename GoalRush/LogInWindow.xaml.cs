@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,15 +15,14 @@ using System.Windows.Shapes;
 
 namespace GoalRush
 {
-    /// <summary>
-    /// Interaction logic for LogInWindow.xaml
-    /// </summary>
     public partial class LogInWindow : Window
     {
         public LogInWindow()
         {
             InitializeComponent();
         }
+
+        private const string ConnectionString = "Server=localhost;Database=sportkellekek;Uid=root;Password=;SslMode=None";
 
         private void New_Pf_Click(object sender, RoutedEventArgs e)
         {
@@ -38,9 +38,45 @@ namespace GoalRush
 
         private void Bejelentkezes_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            string felhasznalonev = Log_Felh.Text.Trim();
+            string jelszo = Log_Jelsz.Password;
+
+            if (string.IsNullOrWhiteSpace(felhasznalonev) || string.IsNullOrWhiteSpace(jelszo))
+            {
+                MessageBox.Show("Kérlek add meg a felhasználónevet és jelszót!", "Hiányzó adat", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM felhasznalok WHERE felhasznalonev = @felh AND jelszo = @jelszo";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@felh", felhasznalonev);
+                        cmd.Parameters.AddWithValue("@jelszo", jelszo);
+
+                        int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                        if (count == 1)
+                        {
+                            MainWindow mainWindow = new MainWindow();
+                            mainWindow.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Hibás felhasználónév vagy jelszó!", "Bejelentkezés sikertelen", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt a bejelentkezés során: " + ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
