@@ -24,32 +24,11 @@ namespace GoalRush
         public Focicipok()
         {
             InitializeComponent();
-            CipoBetoltes();
+
             MarkaBox.SelectedIndex = 0;
             MeretBox.SelectedIndex = 0;
-        }
 
-        private void CipoBetoltes()
-        {
-            string ConnectionString = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None";
-
-            try
-            {
-                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    string sql = "SELECT `marka`, `nev`, `ar`, `meret` FROM `focicipok` WHERE 1";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
-                    DataGrid.ItemsSource = dt.DefaultView;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Hiba" + ex.Message);
-            }
+            FrissitesSzures();
         }
 
         private void FrissitesSzures()
@@ -66,18 +45,18 @@ namespace GoalRush
 
                     string sql = "SELECT `marka`, `nev`, `ar`, `meret` FROM `focicipok` WHERE 1=1";
 
-                    if (markaSzuro != "Minden")
-                        sql += " AND marka = @marka";
+                    if (markaSzuro != "Mindegy")
+                        sql += " AND LOWER(marka) = LOWER(@marka)";
 
-                    if (meretSzuro != "Minden")
+                    if (meretSzuro != "Mindegy")
                         sql += " AND meret = @meret";
 
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-                    if (markaSzuro != "Minden")
+                    if (markaSzuro != "Mindegy")
                         cmd.Parameters.AddWithValue("@marka", markaSzuro);
 
-                    if (meretSzuro != "Minden")
+                    if (meretSzuro != "Mindegy")
                         cmd.Parameters.AddWithValue("@meret", meretSzuro);
 
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
