@@ -28,9 +28,35 @@ namespace GoalRush
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            string felhasznalonev = Reg_Felh.Text.Trim();
+            string jelszo = Reg_Jelszo.Password;
+
+            if (string.IsNullOrWhiteSpace(felhasznalonev) || string.IsNullOrWhiteSpace(jelszo))
+            {
+                MessageBox.Show("Kérlek add meg a felhasználónevet és jelszót!", "Hiányzó adat", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection conn = new MySqlConnection(ConnectionString))
+                {
+                    conn.Open();
+                    string query = "INSERT INTO felhasznalok (Felhasználó, Jelszó) VALUES (@felhasznalo, @jelszo)";
+                    using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@felhasznalo", felhasznalonev);
+                        cmd.Parameters.AddWithValue("@jelszo", jelszo);
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    MessageBox.Show("Sikeres regisztráció!", "Kész", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hiba történt a regisztráció során: " + ex.Message, "Hiba", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void Marvanprofil_Click(object sender, RoutedEventArgs e)
