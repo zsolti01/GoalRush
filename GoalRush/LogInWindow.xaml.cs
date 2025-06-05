@@ -23,7 +23,7 @@ namespace GoalRush
             InitializeComponent();
         }
 
-        private const string ConnectionString = "Server=localhost;Database=sportkellekek;Uid=root;Password=;SslMode=None";
+        private const string ConnectionString = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None";
 
         private void New_Pf_Click(object sender, RoutedEventArgs e)
         {
@@ -53,10 +53,10 @@ namespace GoalRush
                 using (MySqlConnection conn = new MySqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    string query = "SELECT COUNT(*) FROM felhasznalok WHERE felhasznalonev = @felh AND jelszo = @jelszo";
+                    string query = "SELECT * FROM felhasznalok WHERE `Felhasználó` = @felhasznalo AND `Jelszó` = @jelszo";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@felh", felhasznalonev);
+                        cmd.Parameters.AddWithValue("@felhasznalo", felhasznalonev);
                         cmd.Parameters.AddWithValue("@jelszo", jelszo);
 
                         int count = Convert.ToInt32(cmd.ExecuteScalar());
