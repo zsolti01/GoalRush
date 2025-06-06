@@ -24,7 +24,7 @@ namespace GoalRush
         {
             InitializeComponent();
         }
-        private const string ConnectionString = "Server=localhost;Database=sportkellekek;Uid=root;Password=;SslMode=None";
+        private const string ConnectionString = "Server=localhost;Database=GoalRush;Uid=root;Password=;SslMode=None";
 
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {

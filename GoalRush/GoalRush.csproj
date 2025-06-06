@@ -207,6 +207,7 @@
     <Resource Include="Img\visszanyil.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GoalRush.sql" />
     <Content Include="termekek.sql" />
     <Resource Include="Img\white.png" />
     <Resource Include="Img\logo2.png" />

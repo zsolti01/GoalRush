@@ -23,7 +23,7 @@ namespace GoalRush
             InitializeComponent();
         }
 
-        private const string ConnectionString = "Server=localhost;Database=termekek;Uid=root;Password=;SslMode=None";
+        private const string ConnectionString = "Server=localhost;Database=GoalRush;Uid=root;Password=;SslMode=None";
 
         private void New_Pf_Click(object sender, RoutedEventArgs e)
         {
