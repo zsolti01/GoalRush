@@ -51,6 +51,10 @@ namespace GoalRush
                     }
 
                     MessageBox.Show("Sikeres regisztráció!", "Kész", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                   MainWindow main = new MainWindow();
+                   main.Show();    
+                   this.Close();
                 }
             }
             catch (Exception ex)
